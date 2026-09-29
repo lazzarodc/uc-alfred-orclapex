@@ -22,6 +22,7 @@ Results that are URLs open in the browser; everything else is pasted into the ac
 npm install
 npm run sync-data   # copy ../data/*.json into src/data
 npm run generate-icons  # render Font APEX icons into assets/icons (from the Oracle CDN)
+npm test            # vitest: search, data, icons and command rendering
 npm run dev
 ```
 
