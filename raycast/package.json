@@ -4,6 +4,7 @@
   "title": "Oracle APEX",
   "description": "Search Oracle APEX API docs, icons, views, CSS classes & variables, substitution strings and more",
   "icon": "extension-icon.png",
+  "author": "",
   "contributors": [
     "lazzarodc"
   ],
