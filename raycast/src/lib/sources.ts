@@ -191,7 +191,7 @@ export const SOURCES: Record<SourceId, Source> = {
     "Data Generator Domains",
     Icon.Shuffle,
     () => dgDomainsData.results[0].items,
-    ["name", "description"],
+    ["name", "category", "datatype"],
     (o) => ({ uid: o.name, title: o.name, subtitle: `${o.category} | ${o.datatype}`, arg: o.name }),
   ),
   "api-192": makeSource<{ url: string; title: string }>(

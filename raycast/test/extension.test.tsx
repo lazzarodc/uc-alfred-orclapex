@@ -43,6 +43,7 @@ describe("sources", () => {
     expect(titles(SOURCES["css-classes"].search("u-danger"))).toContain("u-danger");
     expect(SOURCES["css-vars"].search("u-color-1")[0].arg).toBe("--u-color-1");
     expect(titles(SOURCES.substitution.search("APP_USER"))).toContain("APP_USER");
+    expect(SOURCES.data_generator_domains.search("NUMBER").filter((i) => i.subtitle?.endsWith("| NUMBER"))).toHaveLength(34);
   });
 
   it("search everything mixes sources", () => {
