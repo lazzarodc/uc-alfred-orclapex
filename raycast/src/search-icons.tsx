@@ -1,4 +1,4 @@
-import { Grid } from "@raycast/api";
+import { Grid, LaunchProps } from "@raycast/api";
 import { useMemo, useState } from "react";
 
 import { ItemActions } from "./components/SearchList";
@@ -6,8 +6,8 @@ import { SOURCES } from "./lib/sources";
 
 const source = SOURCES["icons"];
 
-export default function Command() {
-  const [searchText, setSearchText] = useState("");
+export default function Command({ fallbackText }: LaunchProps) {
+  const [searchText, setSearchText] = useState(fallbackText ?? "");
   const items = useMemo(() => source.search(searchText), [searchText]);
 
   return (
@@ -15,6 +15,7 @@ export default function Command() {
       columns={8}
       inset={Grid.Inset.Large}
       filtering={false}
+      searchText={searchText}
       onSearchTextChange={setSearchText}
       searchBarPlaceholder="Search Font APEX icons..."
       throttle

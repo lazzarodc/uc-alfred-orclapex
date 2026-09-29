@@ -8,14 +8,22 @@ interface Props {
   placeholder: string;
   /** Show which category each result belongs to (used by "Search Everything"). */
   showSource?: boolean;
+  /** Initial search text, e.g. from a fallback command launch. */
+  initialSearchText?: string;
 }
 
-export function SearchList({ search, placeholder, showSource = false }: Props) {
-  const [searchText, setSearchText] = useState("");
+export function SearchList({ search, placeholder, showSource = false, initialSearchText = "" }: Props) {
+  const [searchText, setSearchText] = useState(initialSearchText);
   const items = useMemo(() => search(searchText), [search, searchText]);
 
   return (
-    <List filtering={false} onSearchTextChange={setSearchText} searchBarPlaceholder={placeholder} throttle>
+    <List
+      filtering={false}
+      searchText={searchText}
+      onSearchTextChange={setSearchText}
+      searchBarPlaceholder={placeholder}
+      throttle
+    >
       {items.map((item) => {
         const source = SOURCES[item.sourceId];
         return (
