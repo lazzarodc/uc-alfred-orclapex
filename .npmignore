@@ -4,3 +4,4 @@
 /node_modules/
 .gitignore
 biome.json
+/raycast/
