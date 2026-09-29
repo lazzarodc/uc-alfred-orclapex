@@ -21,9 +21,11 @@ Results that are URLs open in the browser; everything else is pasted into the ac
 ```sh
 npm install
 npm run sync-data   # copy ../data/*.json into src/data
+npm run generate-icons  # render Font APEX icons into assets/icons (from the Oracle CDN)
 npm run dev
 ```
 
 The data lives in the repository root `data/` directory and is shared with the Alfred workflow.
-Run `npm run sync-data` after updating it. `src/lib/core.ts` is a TypeScript port of `lib/core.js`
+Run `npm run sync-data` after updating it. Run `npm run generate-icons` after `data/icons.json` changes
+(pass `-- --apex=<version> --font-apex=<version>` to target another APEX release). `src/lib/core.ts` is a TypeScript port of `lib/core.js`
 and `src/lib/sources.ts` mirrors `getOptions.js` — keep them in sync.

@@ -21,7 +21,7 @@ export function SearchList({ search, placeholder, showSource = false }: Props) {
         return (
           <List.Item
             key={`${item.sourceId}:${item.uid}`}
-            icon={source.icon}
+            icon={item.icon ?? source.icon}
             title={item.title}
             subtitle={item.subtitle}
             accessories={showSource ? [{ tag: source.label }] : undefined}
@@ -33,7 +33,7 @@ export function SearchList({ search, placeholder, showSource = false }: Props) {
   );
 }
 
-function ItemActions({ item }: { item: ApexItem }) {
+export function ItemActions({ item }: { item: ApexItem }) {
   const { primaryAction } = getPreferenceValues<Preferences>();
 
   if (isUrl(item.arg)) {
