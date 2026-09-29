@@ -19,6 +19,8 @@ This is an [Alfred](https://alfred.app/) workflow for quickly accessing Oracle A
 
 **Don't have a Mac or Alfred?** Feel free to fork this repository and create a similar tool for your platform of choice. All the relevant data is stored in the `data` directory.
 
+**Using Raycast?** See the [Raycast extension](./raycast/README.md) in the `raycast` directory.
+
 ## Installation
 
 ```
